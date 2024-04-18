@@ -9,7 +9,7 @@ const connection:connectObject={}
 async function dbConnect():Promise<void>{
     if(connection.isConnected){
         console.log("Alrady connected")
-        return;
+        return; 
     }
     try{
         const db=await mongoose.connect(process.env.MONGO_URI||" ");
@@ -17,6 +17,7 @@ async function dbConnect():Promise<void>{
         console.log("Connected Successfully")
 
     }catch(error){
+        console.log("cstrinf" +process.env.MONGO_URI)
         console.log(error);
         process.exit(1);
 
